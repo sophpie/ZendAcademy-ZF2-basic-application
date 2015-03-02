@@ -1,12 +1,27 @@
 {
   "name" : "zend-academy/zf2-basic-application",
   "description" : "Basic Application for ZF2",
-  "version" : "1.0",
+  "type" : "project",
+  "authors" : [
+  	{
+  		"name" : "Sophie BEAUPUIS",
+  		"email" : "sophie.b@zend.com",
+  		"role" : "Developer"
+  	}
+  ],
   "require" : {
     "php" : ">=5.3.3",
     "zendframework/zendframework" : ">2.2.0rc1"
   },
   "keywords" : [ "framework", "zf2" ],
   "license" : "BSD-3-Clause",
-  "homepage" : "http://framework.zend.com/"
+  "homepage" : "http://framework.zend.com/",
+  "autoload" : {
+  	"psr-0" : {
+  		"Application\\" : "src/"
+  	},
+  	"psr-4" : {
+  		"Application\\" : "src/"
+  	}
+  }
 }

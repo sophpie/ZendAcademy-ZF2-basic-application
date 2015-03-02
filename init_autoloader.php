@@ -1,4 +1,8 @@
 <?php
+// Composer autoloading
+if (file_exists('vendor/autoload.php')) {
+	$loader = include 'vendor/autoload.php';
+}
 
 $zf2Path = false;
 
@@ -13,15 +17,17 @@ if (is_dir('vendor/ZF2/library')) {
 }
 
 if ($zf2Path) {
+	if (isset($loader)) {
+        $loader->add('Zend', $zf2Path);
+        $loader->add('ZendXml', $zf2Path);
+    } else {
         include $zf2Path . '/Zend/Loader/AutoloaderFactory.php';
         Zend\Loader\AutoloaderFactory::factory(array(
             'Zend\Loader\StandardAutoloader' => array(
-                'autoregister_zf' => true,
-                'namespaces' => array(
-        	       'Application\\' => 'src/Application/'
-                ),
+                'autoregister_zf' => true
             )
         ));
+    }
 }
 
 if (!class_exists('Zend\Loader\AutoloaderFactory')) {
