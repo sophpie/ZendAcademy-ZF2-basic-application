@@ -9,7 +9,7 @@
 return [
 	'controllers' => [
 		'invokables' => [
-			'Application\Index' => 'Application\Controller\IndexController',
+			'default' => 'Application\Controller\IndexController',
 		],
 	],
 ];

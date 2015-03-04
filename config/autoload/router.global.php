@@ -4,13 +4,15 @@
  */
 return [
 	'router' => [
+		//Route list
 		'routes' => [
+			//Home page route
 			'home' => [
-				'type' => 'Literal',
+				'type' => 'Literal',	//route type
 				'options' => [
-					'route' => '/',
+					'route' => '/',		//Parsing mask
 					'defaults' => [
-						'controller'	=> 'Application\Index',
+						'controller'	=> 'default',	
 						'action' 		=> 'index',
 					],
 				],
